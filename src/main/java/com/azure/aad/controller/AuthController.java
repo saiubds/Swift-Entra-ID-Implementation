@@ -1,5 +1,6 @@
 package com.azure.aad.controller;
 
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,11 +11,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class AuthController {
-    @RequestMapping("/login_redirect")
+    @GetMapping(value = "/login_redirect", produces = MediaType.TEXT_HTML_VALUE)
     @ResponseBody
     @PreAuthorize("hasAuthority('APPROLE_Admin')")
-    public String Admin() {
+    public String loginMessage() {
 
-       return "User has successfully logged in";
+       return "<html>\n" +
+               "<body bgcolor=\"#5f9ea0\">\n" +
+               "<h1>\n" +
+               "\n" +
+               "    Successfully logged in using Azure Entra ID\n" +
+               "</h1>\n" +
+               "</body>\n" +
+               "</html>";
     }
 }
