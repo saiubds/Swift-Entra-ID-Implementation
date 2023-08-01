@@ -18,7 +18,7 @@ public class AuthController {
 
        return "<html>\n" +
                "<body bgcolor=\"#5f9ea0\">\n" +
-               "<h1>\n" +
+               "<h1 style=\"color:white;\">\n" +
                "\n" +
                "    Successfully logged in using Azure Entra ID\n" +
                "</h1>\n" +
