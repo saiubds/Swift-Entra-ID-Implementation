@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class AuthController {
     @GetMapping(value = "/login_redirect", produces = MediaType.TEXT_HTML_VALUE)
     @ResponseBody
-    @PreAuthorize("hasAuthority('APPROLE_Admin')")
+    //@PreAuthorize("hasAuthority('APPROLE_Admin')")
     public String loginMessage() {
 
        return "<html>\n" +
